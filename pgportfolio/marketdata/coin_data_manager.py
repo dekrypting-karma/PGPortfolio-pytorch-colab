@@ -296,7 +296,7 @@ class CoinDataManager:
             connection.close()
 
     def _fill_data(self, start, end, coin, cursor):
-        duration = self._storage_period
+        duration = self._storage_period * 100  # poloniex data limit = 100 records per request 
         bk_start = start
         for bk_end in range(start + duration - 1, end, duration):
             self._fill_part_data(bk_start, bk_end, coin, cursor)
