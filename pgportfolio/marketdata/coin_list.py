@@ -79,31 +79,14 @@ class CoinList(object):
         chart = {}
         while not is_connect_success:
             try:
-                request_counter = 0
-                time_window_start = time.time()
-                max_requests_per_second = 6
-
-                # Check if the time window has expired
-                if time.time() - time_window_start >= 1:
-                    request_counter = 0
-                    time_window_start = time.time()
-                if request_counter < max_requests_per_second:
-                    # Send the request
-                    # ...
-                    chart = self._polo.market_chart(
-                        pair=pair, start=int(start),
-                        period=int(period), end=int(end)
-                    )
-                    is_connect_success = True
-                    request_counter += 1
-                else:
-                    # Wait for the next time window
-                    time.sleep(1 - (time.time() - time_window_start))
-                    time_window_start = time.time()
-                
+                chart = self._polo.market_chart(
+                    pair=pair, start=int(start),
+                    period=int(period), end=int(end)
+                )
+                is_connect_success = True
             except Exception as e:
                 print(e)
-        return chart
+        return 
 
     # get several days volume
     def _get_total_volume(self, pair, global_end, days, forward):
