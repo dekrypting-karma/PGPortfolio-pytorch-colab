@@ -86,7 +86,7 @@ class CoinList(object):
                 is_connect_success = True
             except Exception as e:
                 print(e)
-        return 
+        return chart
 
     # get several days volume
     def _get_total_volume(self, pair, global_end, days, forward):
