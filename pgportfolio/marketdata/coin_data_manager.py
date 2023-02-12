@@ -23,7 +23,7 @@ class CoinDataManager:
         self._volume_forward = volume_forward
         self._volume_average_days = volume_average_days
         self._coins = None
-        self._db_dir = (db_directory or DATABASE_DIR) + "/data"
+        self._db_dir = (db_directory or DATABASE_DIR) + "/data.db"
         self._initialize_db()
 
     @property
