@@ -22,8 +22,8 @@
     "feature_number":3,
     "test_portion":0.08,
     "validation_portion": 0,
-    "start_date":"2020/10/01",
-    "end_date":"2023/01/26",
+    "start_date":"2021/01/01",
+    "end_date":"2023/01/01",
     "volume_average_days":30
   },
 
